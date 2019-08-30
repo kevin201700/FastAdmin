@@ -1,11 +1,50 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+print('如果程序运行错误，请检查是否安装有下列Module：PyQt5 Tkinter socket')
+
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5.QtGui import QIcon
 import tkinter
 import socket
+import tkinter.messagebox
+
+
+def aboutshow():
+    mainwindow = tkinter.Tk()
+    mainwindow.title("关于 (About) - FastAdmin")
+    width = 480
+    height = 360
+    screenwidth = mainwindow.winfo_screenwidth()
+    screenheight = mainwindow.winfo_screenheight()
+    alignstr = '%dx%d+%d+%d' % (width, height, (screenwidth-width)/2, (screenheight-height)/2)
+    mainwindow.geometry(alignstr)
+    AboutMessage = tkinter.Label(mainwindow, text="关于")
+    AboutMessage.pack()
+    AboutMessage = tkinter.Label(mainwindow, text="Fastadmin 2019.0.01 分支：dev")
+    AboutMessage.pack()
+    AboutMessage = tkinter.Label(mainwindow, text="项目地址：https://gthub.com/kevin201700/FastAdmin/tree/dev/")
+    AboutMessage.pack()
+    AboutMessage = tkinter.Label(mainwindow, text="Tkinter python.org")
+    AboutMessage.pack()
+    AboutMessage = tkinter.Label(mainwindow, text="PyQt5 qt.io")
+    AboutMessage.pack()
+    AboutMessage = tkinter.Label(mainwindow, text="GitHub github.com")
+    AboutMessage.pack()
+    AboutMessage = tkinter.Label(mainwindow, text="IntelliJ Idea jetbrains.com")
+    AboutMessage.pack()
+    AboutMessage = tkinter.Label(mainwindow, text="socket python.org")
+    AboutMessage.pack()
+    AboutMessage = tkinter.Label(mainwindow, text="Python3 python.org")
+    AboutMessage.pack()
+    AboutMessage = tkinter.Label(mainwindow, text="WordPress wordpress.org")
+    AboutMessage.pack()
+    def Namesshow():
+        tkinter.messagebox.showinfo('开发者名单', '李铭昊(Kevin201700)\n')
+    Name = tkinter.Button(mainwindow, text="开发者名单", command = Namesshow)
+    Name.pack()
+    mainwindow.mainloop()
 
 
 def login():
@@ -70,6 +109,7 @@ if __name__ == '__main__':
     #app = QApplication(sys.argv)
     #ex = Example()
     #sys.exit(app.exec_())
+    aboutshow()
     login()
     client = socket.socket()
     client.connect(Servername.get(), "16201")
