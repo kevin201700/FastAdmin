@@ -10,7 +10,7 @@ import socket
 
 def login():
     mainwindow = tkinter.Tk()
-    mainwindow.title("登录到服务器 (Login to Server) - FastCS")
+    mainwindow.title("登录到服务器")
     width = 480
     height = 360
     screenwidth = mainwindow.winfo_screenwidth()
