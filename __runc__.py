@@ -41,7 +41,8 @@ def aboutshow():
     AboutMessage = tkinter.Label(mainwindow, text="WordPress wordpress.org")
     AboutMessage.pack()
     def Namesshow():
-        tkinter.messagebox.showinfo('开发者名单', '李铭昊(Kevin201700)\n')
+        DevNames = '李铭昊(Kevin201700)'
+        tkinter.messagebox.showinfo('开发者名单', DevNames)
     Name = tkinter.Button(mainwindow, text="开发者名单", command = Namesshow)
     Name.pack()
     mainwindow.mainloop()
